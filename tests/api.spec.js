@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 var user_id;
-test('Get Users', async ({request}) => {
+test('Get Users CI/CD', async ({request}) => {
 
     const reponse = await request.get('https://reqres.in/api/users/2')
     console.log(reponse);
@@ -9,7 +9,7 @@ test('Get Users', async ({request}) => {
     expect(reponse.status()).toBe(200)
 }); 
 
-test('Create Users', async ({request}) => {
+test('Create Users CI/CD', async ({request}) => {
 
     const reponse = await request.post('https://reqres.in/api/users',{
         data:{
@@ -25,7 +25,7 @@ test('Create Users', async ({request}) => {
     user_id = res.id
 });
 
-test('Update Users', async ({request}) => {
+test('Update Users CI/CD', async ({request}) => {
 
     const reponse = await request.put('https://reqres.in/api/users/'+user_id,{
         data:{
@@ -37,7 +37,7 @@ test('Update Users', async ({request}) => {
 
     expect(reponse.status()).toBe(200)
 }); 
-test('Delete Users', async ({request}) => {
+test('Delete Users CI/CD', async ({request}) => {
 
     const reponse = await request.delete('https://reqres.in/api/users/'+user_id);
 
